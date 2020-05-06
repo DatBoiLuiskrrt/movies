@@ -12,6 +12,7 @@ import {
 
 
 const MovieCard = ( {film:{title, description,director, release_date}} ) => {
+    // console.log("props in film", film);
     return (
     
         <Col xs="6" md="4" xl="3">
@@ -20,8 +21,9 @@ const MovieCard = ( {film:{title, description,director, release_date}} ) => {
                 <Alert>Film title: {title}</Alert>
                 
                 <CardBody>
+                    <p>Summary</p>
                     <CardText>{description}</CardText>
-                    <CardText>{director}</CardText>
+                    <CardText>Director: {director}</CardText>
                 </CardBody>
                 <Alert color="primary">
                 Release Date: {release_date}
