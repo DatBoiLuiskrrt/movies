@@ -5,6 +5,7 @@ import { Container, Row } from "reactstrap";
 
 export default function MovieList() {
     const [films, setFilms] = useState([]);
+    
 
     useEffect(() => {
         axios
