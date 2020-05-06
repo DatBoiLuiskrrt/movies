@@ -14,7 +14,7 @@ export default function PeliList() {
         .get("https://ghibliapi.herokuapp.com/films/")
         .then( response => {
             setPeli(response.data);
-            console.log("in pelilist " , response.data);
+            // console.log("in pelilist " , response.data);
         })
         .catch(error => {
             console.log("there was a mistake" , error);
