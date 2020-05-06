@@ -7,10 +7,10 @@ function App() {
  
   return (
     <div>
-    {/* <MovieList/> */}
+    <MovieList/>
     {/* <PeliList/>
      */}
-    <OtherList/>     
+    {/* <OtherList/>      */}
       
     </div>
   );

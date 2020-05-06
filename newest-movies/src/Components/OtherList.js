@@ -6,32 +6,35 @@ import { Container, Row } from "reactstrap";
 
 export default function OtherList() {
 
-const [character, setCharacter] = useState({});
+const [character, setCharacter] = useState([]);
 
-    useEffect( () => {
-        axios
-        .get("https://rickandmortyapi.com/api/characters/")
-        .then( response => {
-            setCharacter(response.data);
-            console.log("api data in otherlist", response);
-        })
-        .catch(error => {
-            console.log(" Luis data not returned", error);
-        });
-    },[])
     
-    return (
-        <Container>
-            <Row>
-                {/* {character.map(props => {
-                    return (
-                        <OtherCard
-                         data={props} 
-                         key={props.id}/>
-                    )
-                })} */}
-                
-            </Row>
-        </Container>
-    )
+
+useEffect(() => {
+    axios
+    .get("https://ghibliapi.herokuapp.com/films/")
+    .then( response => {
+        setCharacter(response.data);
+        // console.log("in pelilist " , response.data);
+    })
+    .catch(error => {
+        console.log("there was a mistake" , error);
+    });
+    
+},[]);
+
+return (
+    <Container>
+        <Row>
+            {character.map( pelic => {
+                return (
+                    <OtherCard
+                    data={pelic}
+                    data={pelic.id}
+                    />
+                )
+            })}
+        </Row>
+    </Container>
+)
 };
